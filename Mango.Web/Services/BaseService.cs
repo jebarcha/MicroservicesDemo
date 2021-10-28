@@ -15,7 +15,6 @@ namespace Mango.Web.Services
     {
         public ResponseDto responseModel { get; set; }
         public IHttpClientFactory httpClient { get; set; }
-
         public BaseService(IHttpClientFactory httpClient)
         {
             this.responseModel = new ResponseDto();
