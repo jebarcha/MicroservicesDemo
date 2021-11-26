@@ -144,8 +144,8 @@ namespace Mango.Services.ShoppingCartAPI.Controllers
                 }
 
                 checkoutHeader.CartDetails = cartDto.CartDetails;
-                
-                await _messageBus.PublishMessage(checkoutHeader, "checkoutmessagetopic");
+
+                await _messageBus.PublishMessage(checkoutHeader, "checkoutqueue"); // "checkoutmessagetopic");
                 await _cartRepository.ClearCart(checkoutHeader.UserId);
             }
             catch (Exception ex)
